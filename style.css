@@ -9,26 +9,38 @@
 
 
 
-body{
-    background-image: url("demohomepage.jpg");
+body {
+    background-image: url("Matthew\ Diaz\ WEB\ APP\ JS\ LAB.png");
     background-size: cover;
 }
 
 
+/*Question6*/
+.dropdown {
+    justify-content: center;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    height: 50px;
+    width: 150px;
+    border: 1px solid #ff0000;
+    text-align: center;
+    font-size: larger;
+    background-color: #121111;
+}
 
-.popup{
+.popup {
 
-background-image: url("https://cdn.pixabay.com/photo/2022/06/01/08/57/cocktails-and-mocktails-7235137_640.jpg");
-background-size: contain;
-width: 600px;
-padding: 30px 40px;
-position: absolute;
-transform: translate(-50%,-50%);
-left: 50%;
-top: 50%;
-border-radius: 8px;
-font-family: "Poppins" ,sans-serif;
-display: none;
+    background-image: url("https://t3.ftcdn.net/jpg/01/83/64/54/360_F_183645412_C4KnAEKGWWgkAstYyOVPrOoqJMtSBlnE.jpg");
+    background-size: contain;
+    width: 600px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    display: none;
 }
 
 .popup button {
@@ -37,17 +49,19 @@ display: none;
     background-color: white;
     font-size: 30px;
     color: #c5c5c5;
-    border: none;   
+    border: none;
     outline: none;
     cursor: pointer;
 }
-.popup h2{
+
+.popup h2 {
 
     color: white;
     text-align: center;
-    
+
 }
-.popup p{
+
+.popup p {
 
     font-size: 14px;
     text-align: justify;
@@ -56,7 +70,7 @@ display: none;
     text-align: center;
 }
 
-a{
+a {
 
     display: block;
     width: 150px;
@@ -68,4 +82,212 @@ a{
     text-decoration: none;
     padding: 5px 0;
 }
- 
+
+.popup2 {
+
+    background-image: url("https://t3.ftcdn.net/jpg/01/83/64/54/360_F_183645412_C4KnAEKGWWgkAstYyOVPrOoqJMtSBlnE.jpg");
+    background-size: contain;
+    width: 600px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    display: none;
+}
+
+.popup2 #pop2p {
+    font-size: larger;
+}
+
+
+
+
+.popup2 button {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: white;
+    font-size: 30px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/*Part of Question3*/
+.popup2 h4 {
+
+    color: white;
+    text-align: center;
+
+}
+
+.popup2 #leave {
+    width: 350px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(183, 184, 187);
+    color: #000000;
+    text-decoration: none;
+    padding: 0 0;
+    font-size: smaller;
+}
+
+
+.popup2 p {
+
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    color: rgb(230, 219, 219);
+    text-align: center;
+
+}
+
+.popup-open {
+    background-image: url(Matthew_Diaz_WEB_APP_JS_LAB_blur.png);
+
+}
+
+.popup2-blur {
+    background-image: url(Matthew_Diaz_WEB_APP_JS_LAB_blur.png);
+}
+
+/*Question2*/
+
+.youclicked {
+
+    display: block;
+    width: 1500;
+    height: 600px;
+    font-size: 10px;
+}
+
+.bottomresponse #response {
+    position: fixed;
+    align-items: center;
+    left: 70px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    border: 1px solid red;
+    /* Specify the border style (solid) and color */
+}
+
+/*Question4*/
+#colorp {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 30px;
+    width: 300px;
+    margin: auto;
+    border: 1px solid #ff0000;
+    text-align: center;
+    font-size: larger;
+    background-color: #c5c5c5;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.RedScreen {
+    background-image: url(RedBG.png);
+
+    #colorp {
+        color: #ff0000;
+    }
+
+    .inputoutput #output1 {
+        background-color: rgb(255, 13, 0);
+    }
+}
+
+.GreenScreen {
+    background-image: url(GreenBG.png);
+
+    #colorp {
+        color: #00ff1a;
+    }
+
+    .inputoutput #output1 {
+        background-color: rgb(17, 255, 0);
+    }
+}
+
+.BlueScreen {
+    background-image: url(Matthew\ Diaz\ WEB\ APP\ JS\ LAB.png);
+
+    #colorp {
+        color: #0400ff;
+    }
+
+    .inputoutput #output1 {
+        background-color: rgb(0, 136, 255);
+    }
+}
+
+.colors #R {
+    position: relative;
+    top: -100px;
+    right: -550px;
+    background-color: #ff0000;
+    color: white;
+}
+
+.colors #G {
+    position: relative;
+    top: -100px;
+    right: -650px;
+    background-color: green;
+    color: white;
+}
+
+
+.colors #B {
+    position: relative;
+    top: -100px;
+    right: -750px;
+    background-color: blue;
+    color: white;
+}
+
+/*Question5*/
+.inputoutput {
+
+    position: relative;
+    top: -400px;
+    right: -75px;
+}
+
+
+.inputoutput #input {
+    align-items: auto;
+    justify-content: center;
+    display: flex;
+    height: 30px;
+    width: 300px;
+    position: relative;
+    border: 1px solid #ff0000;
+    text-align: center;
+    font-size: larger;
+    background-color: #c5c5c5;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputoutput #output1 {
+    background-color: aliceblue;
+    width: 200px;
+    height: 200px;
+}
+
+label {
+    font-size: larger;
+    color: azure;
+
+}
