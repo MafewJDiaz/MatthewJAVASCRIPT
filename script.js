@@ -25,6 +25,7 @@ document.querySelector("#close").addEventListener("click", function(){
     document.body.classList.remove("popup-open"); 
     console.log("close")
     setTimeout(popup2,1500);
+    
 });
 
 function popup2(event) {

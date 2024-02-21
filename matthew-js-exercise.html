@@ -5,72 +5,125 @@
     <title>MDs JavaScript World</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> <!-- Include Vue.js library -->
+    <style>
+        .popup-open {
+            display: block;
+        }
 
+        .popup2-blur {
+            filter: blur(5px);
+        }
 
+        .RedScreen {
+            background-color: red;
+        }
+
+        .GreenScreen {
+            background-color: green;
+        }
+
+        .BlueScreen {
+            background-color: blue;
+        }
+    </style>
 </head>
 
 <body>
-    <script src="script.js" defer></script>
+    <div id="app">
+        <div class="popup" v-if="showPopup" @click="hidePopup">
+            <button id="close">&times;</button>
+            <h2>Welcome to MDs JavaScript World</h2>
+            <p>Discover JavaScript techniques using my page</p>
+        </div>
 
-    <div class="popup">
-        <button id="close">&times;</button>
-        <h2>Welcome to MDs JavaScript World</h2>
-        <p>Discover JavaScript techniques using my page</p>
+        <!-- Question2 -->
+        <div class="youclicked">
+            <button id="textbutton" @click="toggleResponse">Click. Trust Me.</button>
+        </div>
 
+        <div class="bottomresponse" v-if="displayText">
+            <p id="response">Surprise! You clicked. :|</p>
+        </div>
 
+        <!-- Question3 -->
+        <div class="popup2" v-if="showCounter">
+            <button id="close2" @click="incrementCounter">&times;</button>
+            <h4 id="counter">{{ counter }}</h4>
+            <p id="pop2p">Try closing out</p>
+            <button id="leave" @click="stopCounter">Stop Growing before its too late</button>
+        </div>
+
+        <!-- Question4 -->
+        <div class="colors">
+            <p id="colorp">experiment with color</p>
+            <button id="R" @click="changeColor('Red')">Red</button>
+            <button id="G" @click="changeColor('Green')">Green</button>
+            <button id="B" @click="changeColor('Blue')">Blue</button>
+        </div>
+
+        <!-- Question5 -->
+        <article class="inputoutput">
+            <label for="input">Type Here</label>
+            <input type="text" id="input" v-model="inputText" placeholder="Write Something" maxlength="20">
+            <input type="button" id="button1" value="Enter" @click="outputText">
+            <p class="output" id="output1">{{ output }}</p>
+        </article>
+
+        <!-- Question6 -->
+        <div class="dropdown">
+            <label for="font-names">Fonts</label>
+            <select name="font-names" id="font-names" v-model="selectedFont">
+                <option v-for="(font, index) in fonts" :key="index" :value="font">{{ font }}</option>
+            </select>
+        </div>
     </div>
 
-    <!-- Question2 -->
-
-    <div class="youclicked">
-        <button id="textbutton">Click. Trust Me.</button>
-    </div>
-
-    <div class="bottomresponse">
-        <p id="response">Suprise! You clicked. :|</p>
-    </div>
-
-    <!---- Question3 -->
-
-    <div class="popup2">
-        <button id="close2">&times;</button>
-        <h4 id="counter">0</h4>
-        <p id="pop2p">Try closing out</p>
-        <button id="leave">Stop Growing before its too late</button>
-    </div>
-
-    <!---- Question4 -->
-
-    <div class="colors">
-        <p id="colorp">experiment with color</p>
-        <button id="R">Red</button>
-        <button id="G">Green</button>
-        <button id="B">Blue</button>
-    </div>
- <!---- Question5 -->
-    <article class="inputoutput">
-        <label for="input">Type Here</label>
-        <input type="text" id="input" placeholder="Write Something" maxlength="20">
-        <input type="button" id="button1" value="Enter">
-        <p class="output" id="output1">
-
-
-        </p>
-    </article>
-
- <!---- Question6 -->
-
-    <div class="dropdown">
-        <label for="font-names">Fonts</label>
-        <select name="font-names" id="font-names">
-            <option id="f1" value="Font1">Font 1</option>
-            <option id="f2" value="Font2">Font 2</option>
-            <option id="f3" value="Font3">Font 3</option>
-            <option id="f4" value="Font4">Font 4</option>
-        </select>
-    </div>
-
-
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                showPopup: true,
+                displayText: false,
+                showCounter: false,
+                counter: 0,
+                selectedFont: '',
+                inputText: '',
+                output: '',
+                fonts: ['Impact, Haettenschweiler, sans-serif', 'Cambria, Cochin, Georgia, Times, serif', 'Verdana, Geneva, Tahoma, sans-serif', 'Brush Script MT']
+            },
+            methods: {
+                hidePopup() {
+                    this.showPopup = false;
+                    setTimeout(() => {
+                        this.showCounter = true;
+                    }, 1500);
+                },
+                toggleResponse() {
+                    this.displayText = !this.displayText;
+                },
+                incrementCounter() {
+                    this.counter++;
+                },
+                stopCounter() {
+                    this.showCounter = false;
+                    this.showPopup = false;
+                    this.displayText = false;
+                    document.querySelector("#textbutton").style.display = "block";
+                    document.querySelector("#colorp").style.display = "block";
+                    document.querySelector(".colors").style.display = "block";
+                    document.querySelector(".inputoutput").style.display = "block";
+                },
+                changeColor(color) {
+                    document.body.classList.remove("RedScreen", "GreenScreen", "BlueScreen");
+                    document.body.classList.add(color + "Screen");
+                },
+                outputText() {
+                    this.output = this.inputText;
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
